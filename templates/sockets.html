@@ -11,13 +11,13 @@
 {% block js %}
 <script type="text/javascript" src="{{ url_for('static', filename='js/socket.io.js') }}"></script>
 <script type="text/javascript" charset="utf-8">
-	var socket = io();
-	socket.on('connect', function() {
-		console.log('connected!')
-		socket.emit('message', {data: 'Connected!'});
-	});
-	socket.on('message', function(message) {
-		console.log('received: ' + JSON.stringify(message));
-	});
+var socket = io();
+socket.on('connect', function() {
+	console.log('connected!')
+	socket.emit('message', {data: 'Connected!'});
+});
+socket.on('message', function(message) {
+	console.log('received: ' + JSON.stringify(message));
+});
 </script>
 {% endblock %}
